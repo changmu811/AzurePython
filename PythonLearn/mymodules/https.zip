@@ -1,0 +1,113 @@
+{
+  "cells": [
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "import shutil\nimport os\nimport glob ",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "# return is res_shutil (<class 'str'>)\nres_shutil = shutil.make_archive('myshutil', 'zip', root_dir = '/home/nbuser/library/PythonLearn/mymodules/myshutil')",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "shutil.copyfile('myshutil.ipynbu', )",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "markdown",
+      "source": "# import glob\n. window系统命令行下通配符匹配(* , ?, [])\n. python 3.5开始glob模块，使用（**）加 Recursive = True能递归匹配所有子目录文件\n. https://www.pynote.net/archives/852\nglob模块可以查找符合特定规则的文件路径名。跟使用windows下的文件搜索差不多。它有三个匹配符：”*”, “?”, “[]”。\n\n*：匹配0个或多个字符；\n?：匹配单个字符；\n[]：匹配指定范围内的字符，如：[a-z]匹配所有字母"
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "# dir_source = os.getcwd()\n# os.chdir('/home')\n# glob_find_file = glob.glob('/home/nbuser/library/PythonLearn/**/*.ipynb', recursive=True)\n# os.chdir(dir_source)\n# print(glob_find_file)",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "dst_file = './test_copy2'\nsrc_file =  '/home/nbuser/library/PythonLearn/mymisc/'\ncurrent_list = glob.glob(os.path.join(src_file,'*'))\nfor dir in current_list:\n    print(dir)\n\n# for x in current_list:\n#     shutil.copy(x,dst_file)",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "re_glob = glob.escape('/home/*/?/[a-z]') # return --> str\nprint((re_glob))",
+      "execution_count": 92,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": "/home/[*]/[?]/[[]a-z]\n",
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "# glob??",
+      "execution_count": 95,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "# x = [1, 2, 3, 4, 5]\n# assert 5 in x \n# print('5 in list x')",
+      "execution_count": 106,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": "5 in list x\n",
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "trusted": true
+      },
+      "cell_type": "code",
+      "source": "",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python36",
+      "display_name": "Python 3.6",
+      "language": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 2
+}
